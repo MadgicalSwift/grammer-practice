@@ -12,4 +12,20 @@ export class User {
   language: string;
   @Column()
   botID: string;
+
+  // Progress tracking fields
+  @Column({ nullable: true })
+  topic: string;
+
+  @Column({ nullable: true })
+  difficulty: string;
+
+  @Column({ default: 0 })
+  currentquesindex: number;
+
+  @Column({ default: 0 })
+  setNumber: number;
+
+  @Column({ default: 0 })
+  score: number;
 }

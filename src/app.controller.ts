@@ -4,7 +4,7 @@ import { log } from './common/middleware/logger.help';
 import { Response } from 'express';
 import { UserService } from './model/user.service';
 import * as dotenv from 'dotenv';
-dotenv.config()
+dotenv.config();
 @Controller()
 export class AppController {
   UserService: any;
@@ -28,7 +28,7 @@ export class AppController {
     try {
       const { from, text } = body;
       this.chatbotService.processMessage(body);
-      log(body.from, text.body);
+      // log(body.from, text.body);
       res.status(200).send({
         status: {
           code: 0,

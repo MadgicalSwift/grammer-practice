@@ -1,5 +1,5 @@
 export const localisedStrings = {
-  welcomeMessage: 'Hi Welcome to the ChatBot',
+  welcomeMessage: 'Hello, Welcome to English Grammar Practice!!',
   seeMoreMessage: 'See More Data',
   language_hindi: 'हिन्दी',
   language_english: 'English',

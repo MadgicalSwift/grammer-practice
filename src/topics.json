@@ -1,0 +1,343 @@
+[
+  {
+    "topic": "Passive Voice",
+    "level": "easy",
+    "questions": [
+      {
+        "question": "Rewrite the sentence in passive voice: 'The cat ate the mouse.'",
+        "options": [
+          "The mouse was eaten by the cat.",
+          "The mouse ate the cat.",
+          "The cat is eating the mouse.",
+          "The mouse eats the cat."
+        ],
+        "correctAnswer": "The mouse was eaten by the cat.",
+        "explanation": "In passive voice, the object of the action becomes the subject of the sentence."
+      },
+      {
+        "question": "Rewrite the sentence in passive voice: 'The chef cooked a delicious meal.'",
+        "options": [
+          "A delicious meal was cooked by the chef.",
+          "The chef is cooking a delicious meal.",
+          "A delicious meal cooks the chef.",
+          "The chef cooks a delicious meal."
+        ],
+        "correctAnswer": "A delicious meal was cooked by the chef.",
+        "explanation": "In passive voice, the focus is on the meal rather than the chef."
+      },
+      {
+        "question": "Rewrite the sentence in passive voice: 'The teacher explains the lesson.'",
+        "options": [
+          "The lesson is explained by the teacher.",
+          "The teacher is explained by the lesson.",
+          "The teacher explains the lesson.",
+          "The lesson explains the teacher."
+        ],
+        "correctAnswer": "The lesson is explained by the teacher.",
+        "explanation": "In passive voice, the object of the action becomes the subject of the sentence."
+      }
+    ]
+  },
+  {
+    "topic": "Passive Voice",
+    "level": "medium",
+    "questions": [
+      {
+        "question": "Rewrite the sentence in passive voice: 'The committee will approve the new policy.'",
+        "options": [
+          "The new policy will be approved by the committee.",
+          "The new policy approves the committee.",
+          "The committee approves the new policy.",
+          "The committee is approving the new policy."
+        ],
+        "correctAnswer": "The new policy will be approved by the committee.",
+        "explanation": "In passive voice, the object of the action becomes the subject of the sentence."
+      },
+      {
+        "question": "Rewrite the sentence in passive voice: 'They had completed the project before the deadline.'",
+        "options": [
+          "The project had been completed by them before the deadline.",
+          "They had been completed by the project before the deadline.",
+          "The project had completed them before the deadline.",
+          "The deadline had completed the project before them."
+        ],
+        "correctAnswer": "The project had been completed by them before the deadline.",
+        "explanation": "In passive voice, the focus is on the project rather than the people."
+      }
+    ]
+  },
+  {
+    "topic": "Passive Voice",
+    "level": "hard",
+    "questions": [
+      {
+        "question": "Rewrite the sentence in passive voice: 'The scientist discovered a new element in the lab.'",
+        "options": [
+          "A new element was discovered by the scientist in the lab.",
+          "A new element discovered the scientist in the lab.",
+          "The scientist was discovered by a new element in the lab.",
+          "In the lab, a new element was discovered by the scientist."
+        ],
+        "correctAnswer": "A new element was discovered by the scientist in the lab.",
+        "explanation": "In passive voice, the focus is on the element rather than the scientist."
+      },
+      {
+        "question": "Rewrite the sentence in passive voice: 'The government is implementing new policies to combat climate change.'",
+        "options": [
+          "New policies to combat climate change are being implemented by the government.",
+          "New policies are implementing the government to combat climate change.",
+          "The government to combat climate change is being implemented by new policies.",
+          "Climate change is being combated by new policies implemented by the government."
+        ],
+        "correctAnswer": "New policies to combat climate change are being implemented by the government.",
+        "explanation": "In passive voice, the focus is on the policies rather than the government."
+      }
+    ]
+  },
+  {
+    "topic": "Present Perfect Tense",
+    "level": "easy",
+    "questions": [
+      {
+        "question": "Choose the correct form of the verb: 'He _____ (go) to the store.'",
+        "options": ["goes", "has gone", "went", "going"],
+        "correctAnswer": "has gone",
+        "explanation": "The present perfect tense is used to describe an action that occurred at an unspecified time and has relevance to the present."
+      },
+      {
+        "question": "Complete the sentence: 'They _____ (see) this movie before.'",
+        "options": ["sees", "has seen", "have seen", "saw"],
+        "correctAnswer": "have seen",
+        "explanation": "Present perfect tense is used to indicate that an action has been completed before another point in time."
+      }
+    ]
+  },
+  {
+    "topic": "Present Perfect Tense",
+    "level": "medium",
+    "questions": [
+      {
+        "question": "Choose the correct form of the verb: 'She _____ (write) a letter.'",
+        "options": ["writes", "has written", "wrote", "writing"],
+        "correctAnswer": "has written",
+        "explanation": "The present perfect tense is used to describe an action that occurred at an unspecified time and has relevance to the present."
+      },
+      {
+        "question": "Complete the sentence: 'They _____ (finish) their homework before dinner.'",
+        "options": ["finished", "finishes", "have finished", "finishing"],
+        "correctAnswer": "have finished",
+        "explanation": "Present perfect tense is used to indicate that an action has been completed before another point in time."
+      }
+    ]
+  },
+  {
+    "topic": "Present Perfect Tense",
+    "level": "hard",
+    "questions": [
+      {
+        "question": "Choose the correct form of the verb: 'We _____ (be) to Paris three times.'",
+        "options": ["are", "have been", "were", "being"],
+        "correctAnswer": "have been",
+        "explanation": "Present perfect tense is used to describe an experience at an unspecified time."
+      },
+      {
+        "question": "Complete the sentence: 'He _____ (live) in five different countries.'",
+        "options": ["lives", "has lived", "lived", "living"],
+        "correctAnswer": "has lived",
+        "explanation": "Present perfect tense is used to describe an action that occurred at an unspecified time and has relevance to the present."
+      }
+    ]
+  },
+  {
+    "topic": "Future Perfect Tense",
+    "level": "easy",
+    "questions": [
+      {
+        "question": "Complete the sentence: 'By next year, I _____ (graduate) from college.'",
+        "options": [
+          "will graduate",
+          "will have graduated",
+          "will graduated",
+          "will be graduating"
+        ],
+        "correctAnswer": "will have graduated",
+        "explanation": "Future perfect tense is used to describe an action that will be completed before a specific point in the future."
+      },
+      {
+        "question": "Choose the correct form of the verb: 'She _____ (finish) her work by the time you arrive.'",
+        "options": [
+          "will finish",
+          "will have finished",
+          "will finishes",
+          "will be finishing"
+        ],
+        "correctAnswer": "will have finished",
+        "explanation": "Future perfect tense is used to describe an action that will be completed before a specific point in the future."
+      }
+    ]
+  },
+  {
+    "topic": "Future Perfect Tense",
+    "level": "medium",
+    "questions": [
+      {
+        "question": "Complete the sentence: 'By 2025, scientists _____ (discover) a cure for the disease.'",
+        "options": [
+          "will discover",
+          "will have discovered",
+          "will be discovering",
+          "will discovers"
+        ],
+        "correctAnswer": "will have discovered",
+        "explanation": "Future perfect tense is used to describe an action that will be completed before a specific point in the future."
+      },
+      {
+        "question": "Choose the correct form of the verb: 'They _____ (build) the new bridge by next month.'",
+        "options": [
+          "will build",
+          "will have built",
+          "will be building",
+          "will builds"
+        ],
+        "correctAnswer": "will have built",
+        "explanation": "Future perfect tense is used to describe an action that will be completed before a specific point in the future."
+      }
+    ]
+  },
+  {
+    "topic": "Future Perfect Tense",
+    "level": "hard",
+    "questions": [
+      {
+        "question": "Complete the sentence: 'By the time the concert starts, we _____ (arrive).' ",
+        "options": [
+          "will arrive",
+          "will have arrived",
+          "will be arriving",
+          "will arrives"
+        ],
+        "correctAnswer": "will have arrived",
+        "explanation": "Future perfect tense is used to describe an action that will be completed before a specific point in the future."
+      },
+      {
+        "question": "Choose the correct form of the verb: 'He _____ (finish) his book by the end of the month.'",
+        "options": [
+          "will finish",
+          "will have finished",
+          "will be finishing",
+          "will finishes"
+        ],
+        "correctAnswer": "will have finished",
+        "explanation": "Future perfect tense is used to describe an action that will be completed before a specific point in the future."
+      }
+    ]
+  },
+  {
+    "topic": "Jumbled Words",
+    "level": "easy",
+    "questions": [
+      {
+        "question": "Unscramble the word: 'GOD'",
+        "options": ["DOG", "ODG", "GDO", "GOD"],
+        "correctAnswer": "DOG",
+        "explanation": "The correct unscrambled word is 'DOG'."
+      },
+      {
+        "question": "Unscramble the word: 'CIT'",
+        "options": ["TIC", "CIT", "ICT", "TIC"],
+        "correctAnswer": "TIC",
+        "explanation": "The correct unscrambled word is 'TIC'."
+      }
+    ]
+  },
+  {
+    "topic": "Jumbled Words",
+    "level": "medium",
+    "questions": [
+      {
+        "question": "Unscramble the word: 'ENOHSP'",
+        "options": ["SPHONE", "PHONE", "EPHON", "HOPNE"],
+        "correctAnswer": "PHONE",
+        "explanation": "The correct unscrambled word is 'PHONE'."
+      },
+      {
+        "question": "Unscramble the word: 'LEAPP'",
+        "options": ["PLEAP", "APPLE", "ELAPP", "PALEP"],
+        "correctAnswer": "APPLE",
+        "explanation": "The correct unscrambled word is 'APPLE'."
+      }
+    ]
+  },
+  {
+    "topic": "Jumbled Words",
+    "level": "hard",
+    "questions": [
+      {
+        "question": "Unscramble the word: 'NOITCURTSED'",
+        "options": ["DESTRUCTION", "NSTRUCTION", "STRUCTIONDE", "DESTRUCTONI"],
+        "correctAnswer": "DESTRUCTION",
+        "explanation": "The correct unscrambled word is 'DESTRUCTION'."
+      },
+      {
+        "question": "Unscramble the word: 'MARCOS'",
+        "options": ["MACROS", "CAROMS", "MARSOC", "ROAMCS"],
+        "correctAnswer": "MACROS",
+        "explanation": "The correct unscrambled word is 'MACROS'."
+      }
+    ]
+  },
+  {
+    "topic": "Fill the Prepositions",
+    "level": "easy",
+    "questions": [
+      {
+        "question": "Fill in the blank: 'She is going _____ the store.'",
+        "options": ["to", "in", "by", "on"],
+        "correctAnswer": "to",
+        "explanation": "The correct preposition is 'to'."
+      },
+      {
+        "question": "Fill in the blank: 'He sat _____ the chair.'",
+        "options": ["on", "in", "at", "by"],
+        "correctAnswer": "on",
+        "explanation": "The correct preposition is 'on'."
+      }
+    ]
+  },
+  {
+    "topic": "Fill the Prepositions",
+    "level": "medium",
+    "questions": [
+      {
+        "question": "Fill in the blank: 'The book is _____ the table.'",
+        "options": ["on", "in", "at", "by"],
+        "correctAnswer": "on",
+        "explanation": "The correct preposition is 'on'."
+      },
+      {
+        "question": "Fill in the blank: 'She is interested _____ learning new languages.'",
+        "options": ["in", "at", "on", "for"],
+        "correctAnswer": "in",
+        "explanation": "The correct preposition is 'in'."
+      }
+    ]
+  },
+  {
+    "topic": "Fill the Prepositions",
+    "level": "hard",
+    "questions": [
+      {
+        "question": "Fill in the blank: 'He is good _____ playing the piano.'",
+        "options": ["at", "in", "on", "by"],
+        "correctAnswer": "at",
+        "explanation": "The correct preposition is 'at'."
+      },
+      {
+        "question": "Fill in the blank: 'She arrived _____ the airport an hour early.'",
+        "options": ["at", "on", "in", "by"],
+        "correctAnswer": "at",
+        "explanation": "The correct preposition is 'at'."
+      }
+    ]
+  }
+]

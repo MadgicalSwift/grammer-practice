@@ -22,10 +22,17 @@ export abstract class MessageService {
       });
       return response.data;
     } catch (error) {
-      throw new CustomException(error);
+      console.log(error);
+      // throw new CustomException(error);
     }
   }
 
   abstract sendWelcomeMessage(from: string, language: string);
   abstract sendLanguageChangedMessage(from: string, language: string);
+  abstract sendDifficultyButtons(from: string);
+  abstract sendTopicsList(from: string);
+  abstract startQuiz(from: string, topic: string, difficulty: string);
+  abstract handleAnswer(from: string, answer: string);
+  abstract sendNextQues(form: string);
+  abstract sendNextAndMainMenuButtons(from: string);
 }
