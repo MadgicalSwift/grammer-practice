@@ -8,6 +8,8 @@ import axios from 'axios';
 import { UserService } from 'src/model/user.service';
 import { MixpanelService } from 'src/mixpanel/mixpanel.service';
 import _ from 'lodash';
+import * as fs from 'fs';
+import * as path from 'path';
 dotenv.config();
 
 @Injectable()
@@ -18,6 +20,7 @@ export class SwiftchatMessageService extends MessageService {
   private baseUrl = `${this.apiUrl}/${this.botId}/messages`;
   private topics: string[];
   private readonly mixpanel: MixpanelService;
+  private jsonData: any;
 
   constructor(
     private userService: UserService,
@@ -30,11 +33,23 @@ export class SwiftchatMessageService extends MessageService {
   // private getTopic(): string[] {
   //   return topicsJson.map((topic) => topic.topic);
   // }
+  async onModuleInit() {
+    // Read the JSON file once during the initialization
+    console.log("single time read")
+    const filePath = path.resolve(__dirname,'..','topic.json');
+    this.jsonData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+
+  }
   private getTopic(): string[] {
     const uniqueTopics = new Set(topicsJson.map((topic) => topic.topic));
     return Array.from(uniqueTopics);
   }
-
+  
+  async getAllTopic() {
+    const topics = this.jsonData.map(item => item.topic);
+    const uniqueTopics = Array.from(new Set(topics));
+    return uniqueTopics; // Return the array wrapped in a Promise
+  }
   // function to create level buttons
   private async createLevelButtons(
     from: string,

@@ -36,4 +36,6 @@ export abstract class MessageService {
   abstract handleAnswer(from: string, answer: string);
   abstract sendNextQues(form: string);
   abstract sendNextAndMainMenuButtons(from: string);
+  abstract getAllTopic();
+
 }

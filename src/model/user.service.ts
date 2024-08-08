@@ -32,6 +32,12 @@ export class UserService {
             mobileNumber: mobileNumber,
             language: language,
             botID: botID,
+            topic: null,
+            difficulty: null,
+            currentquesindex:0,
+            setNumber:0,
+            score:0
+
           },
         };
         await dynamoDBClient().put(newUser).promise();
@@ -101,6 +107,75 @@ export class UserService {
     };
     return await dynamoDBClient().put(updateUser).promise();
   }
+
+  async saveLevelName(
+    mobileNumber: string,
+    botID?: string,
+    level?:string
+  ): Promise<User | any> {
+    try {
+      const existingUser = await this.findUserByMobileNumber(
+        mobileNumber,
+        botID,
+      );
+      if (existingUser) {
+        existingUser.difficulty = level;
+        const updateUser = {
+          TableName: USER_TABLE,
+          Item: existingUser,
+        };
+        await dynamoDBClient().put(updateUser).promise();
+        return existingUser;
+      } else {
+        const newUser = {
+          TableName: USER_TABLE,
+          Item: {
+            mobileNumber,
+            difficulty: level,
+          },
+        };
+        await dynamoDBClient().put(newUser).promise();
+        return newUser;
+      }
+    } catch (error) {
+      console.error('Error in createUser:', error);
+    }
+  }
+
+  async saveTopicName(
+    mobileNumber: string,
+    botID?: string,
+    topic?:string
+  ): Promise<User | any> {
+    try {
+      const existingUser = await this.findUserByMobileNumber(
+        mobileNumber,
+        botID,
+      );
+      if (existingUser) {
+        existingUser.topic = topic;
+        const updateUser = {
+          TableName: USER_TABLE,
+          Item: existingUser,
+        };
+        await dynamoDBClient().put(updateUser).promise();
+        return existingUser;
+      } else {
+        const newUser = {
+          TableName: USER_TABLE,
+          Item: {
+            mobileNumber,
+            topic: topic,
+          },
+        };
+        await dynamoDBClient().put(newUser).promise();
+        return newUser;
+      }
+    } catch (error) {
+      console.error('Error in createUser:', error);
+    }
+  }
+
 
   // async resetUserProgress(mobileNumber: string): Promise<void> {
   //   let botId = process.env.botId;

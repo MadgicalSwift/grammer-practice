@@ -5,4 +5,6 @@ export const localisedStrings = {
   language_hindi: 'हिन्दी',
   language_english: 'English',
   language_changed: 'Language changed to English',
+  validText:['hi', 'Hi', 'HI', 'hI', 'Hello', 'hello', 'hola'],
+  dififcultyLevel:['easy', 'medium', 'hard'],
 };
