@@ -1,102 +1,129 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 import { User } from './user.entity';
+import { dynamoDBClient } from 'src/config/database-config.service';
+import { PutCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
+const { USER_TABLE } = process.env;
 
 @Injectable()
 export class UserService {
-  constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
-  ) {}
   async createUser(
     mobileNumber: string,
     language: string,
     botID: string,
-  ): Promise<User> {
-    const existingUser = await this.findUserByMobileNumber(mobileNumber, botID);
-    if (existingUser) {
-      existingUser.language = language;
-      return this.userRepository.save(existingUser);
-    } else {
-      const newUser = new User();
-      newUser.mobileNumber = mobileNumber;
-      newUser.language = language;
-      newUser.botID = botID;
-      return this.userRepository.save(newUser);
+  ): Promise<User | any> {
+    try {
+      let user = await this.findUserByMobileNumber(mobileNumber, botID);
+
+      if (user) {
+        const updateUser = {
+          TableName: USER_TABLE,
+          Item: user,
+        };
+        await dynamoDBClient().put(updateUser).promise();
+        return user;
+      } else {
+        const newUser = {
+          TableName: USER_TABLE,
+          Item: {
+            id: uuidv4(),
+            mobileNumber: mobileNumber,
+            language: language,
+            botID: botID,
+          },
+        };
+        await dynamoDBClient().put(newUser).promise();
+        return newUser;
+      }
+    } catch (error) {
+      console.error('Error in createUser:', error);
     }
   }
 
   async findUserByMobileNumber(
     mobileNumber: string,
-    botID: string,
-  ): Promise<User | undefined> {
-    return this.userRepository.findOne({ where: { mobileNumber } });
+    botID?: string,
+  ): Promise<any> {
+    const params: any = {
+      TableName: USER_TABLE,
+      KeyConditionExpression: 'mobileNumber = :mobileNumber',
+      ExpressionAttributeValues: {
+        ':mobileNumber': mobileNumber,
+      },
+    };
+    if (botID) {
+      params.FilterExpression = 'botID = :botID';
+      params.ExpressionAttributeValues[':botID'] = botID;
+    }
+    try {
+      const result = await dynamoDBClient().query(params).promise();
+      return result.Items && result.Items.length > 0 ? result.Items[0] : null;
+    } catch (error) {
+      console.error('Error querying user from DynamoDB:', error);
+      return null;
+    }
   }
 
-  async saveUser(user: User): Promise<User | undefined> {
-    return this.userRepository.save(user);
+  async saveUser(user: User): Promise<User | any> {
+    const updateUser = {
+      TableName: USER_TABLE,
+      Item: user,
+    };
+    return await dynamoDBClient().put(updateUser).promise();
   }
 
   // User Progress Functionalities
-  async getUserProgress(mobileNumber: string): Promise<User | undefined> {
-    return this.userRepository.findOne({ where: { mobileNumber } });
+
+  async getUserProgress(mobileNumber: string): Promise<any> {
+    const params: any = {
+      TableName: USER_TABLE,
+      KeyConditionExpression: 'mobileNumber = :mobileNumber',
+      ExpressionAttributeValues: {
+        ':mobileNumber': mobileNumber,
+      },
+    };
+
+    try {
+      const result = await dynamoDBClient().query(params).promise();
+      return result.Items && result.Items.length > 0 ? result.Items[0] : null;
+    } catch (error) {
+      console.error('Error querying user from DynamoDB:', error);
+      return null;
+    }
   }
-  // async getUserProgress(mobileNumber: string): Promise<User | undefined> {
-  //   console.log('123');
-  //   return this.userRepository.findOne({ where: { mobileNumber } });
+
+  async saveUSerProgress(user: User): Promise<User | any> {
+    const updateUser = {
+      TableName: USER_TABLE,
+      Item: user,
+    };
+    return await dynamoDBClient().put(updateUser).promise();
+  }
+
+  // async resetUserProgress(mobileNumber: string): Promise<void> {
+  //   let botId = process.env.botId;
+  //   const user = await this.findUserByMobileNumber(mobileNumber, botId);
+  //   if (user) {
+  //     user.topic = null;
+  //     user.difficulty = null;
+  //     user.currentquesindex = 0;
+  //     user.score = 0;
+  //   }
   // }
-
-  async saveUSerProgress(user: User): Promise<User | undefined> {
-    return this.userRepository.save(user);
-  }
-
   async resetUserProgress(mobileNumber: string): Promise<void> {
-    let botId = process.env.botId;
-    const user = await this.findUserByMobileNumber(mobileNumber, botId);
+    const user = await this.getUserProgress(mobileNumber);
     if (user) {
       user.topic = null;
       user.difficulty = null;
       user.currentquesindex = 0;
       user.score = 0;
-      await this.userRepository.save(user);
+      const updateUser = {
+        TableName: USER_TABLE,
+        Item: user,
+      };
+      await dynamoDBClient().put(updateUser).promise();
     }
-  }
-
-  // New Code
-  // async getUserProgress(mobileNumber: string): Promise<User> {
-  //   const user = await this.findUserByMobileNumber(mobileNumber);
-  //   if (!user) {
-  //     throw new Error('User not found');
-  //   }
-  //   return user;
-  // }
-
-  // async updateUserProgress(
-  //   mobileNumber: string,
-  //   topic: string,
-  //   difficulty: string,
-  //   currentquesindex: number,
-  // ): Promise<User> {
-  //   console.log('funcn called');
-  //   const user = await this.findUserByMobileNumber(mobileNumber);
-  //   if (!user) {
-  //     throw new Error('User not found');
-  //   }
-  //   user.topic = topic;
-  //   user.difficulty = difficulty;
-  //   user.currentquesindex = currentquesindex;
-  //   return this.userRepository.save(user);
-  // }
-  async updateUserProgress(topic: string) {
-    console.log('funcn called');
-    // const user = await this.findUserByMobileNumber(mobileNumber);
-    // if (!user) {
-    //   throw new Error('User not found');
-    // }
-    // user.topic = topic;
-    // user.difficulty = difficulty;
-    // user.currentquesindex = currentquesindex;
-    // return this.userRepository.save(user);
   }
 }

@@ -77,7 +77,7 @@ export class SwiftchatMessageService extends MessageService {
         body: {
           type: 'text',
           text: {
-            body: 'Please choose a topic:',
+            body: 'Please select a grammar topic to begin:',
           },
         },
         buttons: buttons,
@@ -214,7 +214,7 @@ export class SwiftchatMessageService extends MessageService {
       requestData,
       this.apiKey,
     );
-    // console.log('kaisa h');
+
     await this.sendTopicsList(from);
     return response;
   }
@@ -242,7 +242,7 @@ export class SwiftchatMessageService extends MessageService {
     }));
     await this.createLevelButtons(
       from,
-      'Please select a difficulty level',
+      'Great choice! Now, please select your difficulty level:',
       buttons,
     );
   }

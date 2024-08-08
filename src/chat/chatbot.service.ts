@@ -50,7 +50,6 @@ export class ChatbotService {
         // await this.userService.resetUserProgress(from);
         console.log(userData.topic, userData.difficulty);
         await this.message.handleAnswer(from, button_response.body);
-        // await this.message.sendNextAndMainMenuButtons(from);
         await this.message.sendNextQues(from);
       } else if (userData.topic) {
         // User has selected topic but not difficulty
