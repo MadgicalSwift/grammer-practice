@@ -6,6 +6,7 @@ import { MessageService } from 'src/message/message.service';
 import { response } from 'express';
 import axios from 'axios';
 import { UserService } from 'src/model/user.service';
+import { MixpanelService } from 'src/mixpanel/mixpanel.service';
 import _ from 'lodash';
 dotenv.config();
 
@@ -16,10 +17,15 @@ export class SwiftchatMessageService extends MessageService {
   private apiUrl = process.env.API_URL;
   private baseUrl = `${this.apiUrl}/${this.botId}/messages`;
   private topics: string[];
+  private readonly mixpanel: MixpanelService;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    mixpanel: MixpanelService,
+    ) {
     super();
     this.topics = this.getTopic();
+    this.mixpanel = mixpanel;
   }
   // private getTopic(): string[] {
   //   return topicsJson.map((topic) => topic.topic);
@@ -343,6 +349,14 @@ export class SwiftchatMessageService extends MessageService {
         ),
         this.apiKey,
       );
+      this.mixpanel.track('Taking_Quiz', {
+        distinct_id: from,
+        language: userProgress.language,
+        question: currentques.question,
+        user_answer: answer,
+        correct_answer: currentques.correctAnswer,
+        answer_is: 'correct',
+      });
     } else {
       await this.sendMessage(
         this.baseUrl,
@@ -354,6 +368,14 @@ export class SwiftchatMessageService extends MessageService {
         this.apiKey,
       );
       await this.userService.resetUserProgress(from);
+      this.mixpanel.track('Taking_Quiz', {
+        distinct_id: from,
+        language: userProgress.language,
+        question: currentques.question,
+        user_answer: answer,
+        correct_answer: currentques.correctAnswer,
+        answer_is: 'incorrect',
+      });
     }
     userProgress.currentquesindex++;
     await this.userService.saveUSerProgress(userProgress);

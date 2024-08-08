@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import { CustomException } from 'src/common/exception/custom.exception';
 import { localisedStrings } from 'src/i18n/en/localised-strings';
+import { MixpanelService } from 'src/mixpanel/mixpanel.service';
 
 @Injectable()
 export abstract class MessageService {
