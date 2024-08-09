@@ -359,8 +359,8 @@ export class SwiftchatMessageService extends MessageService {
         this.baseUrl,
         this.prepareRequestData(
           from,
-          `Congrats!, Correct answer. ✅
-          Correct explanation is : ${currentques.explanation}`,
+          `Congrats!, Correct answer. ✅ 
+          Correct explanation : ${currentques.explanation}`,
         ),
         this.apiKey,
       );
@@ -377,8 +377,9 @@ export class SwiftchatMessageService extends MessageService {
         this.baseUrl,
         this.prepareRequestData(
           from,
-          `❌ Sorry!, This is not the correct answer.
-          Correct explanation is : ${currentques.explanation}`,
+          `❌ Sorry!, This is not the correct answer. 
+          Correct answer is: ${currentques.correctAnswer}
+          Correct explanation: ${currentques.explanation}`,
         ),
         this.apiKey,
       );
