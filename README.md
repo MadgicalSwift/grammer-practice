@@ -1,7 +1,42 @@
-#  Chatbot NestJS Boilerplate
+#  English Grammar Practice Bot
+## Overview
+The Grammar Quiz Bot is an interactive chatbot designed to help users improve their grammar skills. It provides quizzes on a variety of grammar topics, such as **Passive Voice, Present Perfect Tense, Future Perfect Tense, Jumbled Words, Fill the Prepositions, Nouns, Verbs**, and more. The bot adapts to user input by allowing the selection of different topics and difficulty levels, and after each question, it displays the correct answer along with a brief explanation.
 
-In this comprehensive guide, we introduce you to our Chatbot Starter Kit, a resource designed to empower developers in building robust chatbot applications. Whether you are just starting your journey in chatbot development or are an experienced developer seeking an efficient solution, this document is your go-to resource for mastering the use of our starter kit.
+## Features
+1. **Welcome Message:**
+   The bot starts with a friendly greeting: "Hi!". Users will then receive a welcome message and can select a grammar topic to begin.
 
+2. **Select Grammar Topic:**
+Users are presented with buttons to choose a grammar topic such as:
+Passive Voice,
+Present Perfect Tense,
+Future Perfect Tense,
+Jumbled Words,
+Fill The Prepositions,
+Nouns and Verbs. 
+Upon selection, users can then choose the difficulty level: Easy, Medium, or Hard.
+
+3. **Answer Questions:**
+Based on the chosen topic and difficulty, users will receive a series of 10 grammar questions.
+After each question is answered:
+The bot provides feedback on whether the answer is correct.
+The correct answer is displayed, along with a brief explanation to help users learn.
+
+4. **View Score:**
+After completing the set of 10 questions, the user’s score will be displayed out of 10.
+The bot will also provide buttons to allow users to select a new grammar topic and difficulty level for a new quiz.
+
+5. **Change Topic/Difficulty:**
+Users can select a new grammar topic or change the difficulty level at the end of any quiz.
+This feature allows for continuous learning and exploration of different grammar concepts.
+
+## How to Use
+
+* Start the bot.
+* Choose a grammar topic.
+* Select a difficulty level.
+* Answer the questions and view explanations.
+* Repeat or select a new topic after seeing your score.
 
 # Prerequisites
 Before you begin, ensure you have met the following requirements:
